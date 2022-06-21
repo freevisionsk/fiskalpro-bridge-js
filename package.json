@@ -1,0 +1,34 @@
+{
+  "name": "fiskalpro-bridge",
+  "version": "0.0.1",
+  "description": "JavaScript client for FiskalPro Bridge",
+  "main": "dist/fiskalpro-bridge.umd.js",
+  "module": "dist/fiskalpro-bridge.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freevisionsk/fiskalpro-bridge-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freevisionsk/fiskalpro-bridge-js/issues"
+  },
+  "homepage": "https://github.com/freevisionsk/fiskalpro-bridge-js",
+  "author": "freevision s.r.o.",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "rollup": "^2.75.7",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "types": "tsc --noEmit false --declaration true --emitDeclarationOnly true --outDir dist/types",
+    "build": "yarn types && rollup -c",
+    "dev": "rollup -c -w",
+    "pretest": "yarn build"
+  },
+  "files": [
+    "dist"
+  ]
+}
